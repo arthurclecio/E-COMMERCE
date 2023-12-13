@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #302f2f;
+    padding-top: 56px;
+}
+
+h1 {
+    text-align: center;
+    color: #00ff59;
+    margin-top: 50px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #04ff00;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+}
+
+#checkoutForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #333;
+}
+
+#checkoutForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#checkoutForm input,
+#checkoutForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#checkoutForm button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#checkoutForm button:hover {
+    background-color: #0056b3;
+}
+
+#carrinho {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#carrinho th,
+#carrinho td {
+    border: 1px solid #000000;
+    padding: 12px;
+    text-align: left;
+}
+
+#carrinho th {
+    background-color: #000000;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #000000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #000000 !important;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">EcoStore</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h1>Carrinho de Compras</h1>
+
+<form id="checkoutForm">
+    <div>
+        <label for="numeroCartao">Cartão de Crédito:</label>
+        <input type="number" id="numeroCartao" name="numeroCartao" required>
+    </div>
+    
+    <div>
+        <label for="numeroParcelas">Número de Parcelas:</label>
+        <input type="number" id="numeroParcelas" name="numeroParcelas" required>
+    </div>
+    
+    <div>
+        <label for="Estado">Estado:</label>
+        <input type="text" id = "Estado" name="Estado" required>
+    </div>
+    <div>
+        <label for="Estado">Bairro:</label>
+        <input type="text" id= "Bairro" name="Bairro" required>
+    </div>
+    <div>
+        <label for="Rua">Rua:</label>
+        <input type="text" id="Rua" name="Rua" required>
+    </div>
+
+
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+</form>
+
+<table id="carrinho">
+    <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+    </tr>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        exibirProdutosNoCarrinho();
+    });
+    
+    function exibirProdutosNoCarrinho() {
+        var carrinho = localStorage.getItem('carrinho');
+        var carrinhoBody = document.getElementById('carrinho').getElementsByTagName('tbody')[0];
+    
+        if (carrinho) {
+            carrinho = JSON.parse(carrinho);
+    
+            carrinho.forEach(function(produto) {
+                var newRow = carrinhoBody.insertRow();
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+    
+                cell1.innerHTML = produto.nome;
+                cell2.innerHTML = produto.preco;
+            });
+        }
+    }
+    
+    function finalizarCompra() {
+        // Lógica para finalizar a compra, como limpar o localStorage e redirecionar para uma página de confirmação
+        var numeroCartao = document.getElementById('numeroCartao').value;
+        var numeroParcelas = document.getElementById('numeroParcelas').value;
+        var enderecoEntrega = document.getElementById('enderecoEntrega').value;
+    
+        // Adicione a lógica necessária para processar esses dados conforme a necessidade do seu sistema
+    
+        localStorage.removeItem('carrinho');
+        limparCarrinhoNaTela();
+        window.location.href = 'confirmacao.html';
+    }
+    
+    function limparCarrinhoNaTela() {
+        var carrinhoBody = document.getElementById('carrinho').getElementsByTagName('tbody')[0];
+        carrinhoBody.innerHTML = ''; // Limpa o conteúdo da tabela
+    }
+    </script>
+</body>
+</html>
+

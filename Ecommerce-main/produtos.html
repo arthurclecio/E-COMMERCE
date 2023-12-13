@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EcoStore - Produtos Sustentáveis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #343a40;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        /* Produtos em Destaque */
+        h2 {
+            color: #007bff;
+        }
+
+        .card {
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        /* Responsividade */
+        @media (max-width: 576px) {
+            body {
+                padding-top: 56px;
+            }
+        }
+
+        #carrinhoProdutos table {
+            width: 100%;
+        }
+
+        #carrinhoProdutos th,
+        #carrinhoProdutos td {
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">EcoStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html">Carrinho</a>
+                </li>
+            </ul>
+        </div>
+        <div id="carrinho" onclick="mostrarCarrinho()">🛒</div>
+    </nav>
+
+    <!-- Produtos em Destaque -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Produtos em Destaque</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="anvisa-produto-limpeza-proibicao-bdf83b90.jpg" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Produtos de Limpeza</h5>
+                        <p class="card-text">Produtos sem produtos químicos agressivos</p>
+                        <span class="price">R$ 10,00</span>
+                        <a href="#" class="btn btn-primary comprar-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="bloco_ecolgico_kraf22.jpg" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Caderno</h5>
+                        <p class="card-text">Caderno Reciclavel</p>
+                        <span class="price">R$ 14,99</span>
+                        <a href="#" class="btn btn-primary comprar-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="crachá.png" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Crachá</h5>
+                        <p class="card-text">Cracha para Evento Sustentável</p>
+                        <span class="price">R$ 12,99</span>
+                        <a href="#" class="btn btn-primary comprar-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="th.jpg" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco Bag</h5>
+                        <p class="card-text">Bolsa Reciclavel</p>
+                        <span class="price">R$ 9,99</span>
+                        <a href="#" class="btn btn-primary comprar-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Tag-ecológico-quadrado-7x7cm-2--768x1024.jpg" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Tags Papel com Semente</h5>
+                        <p class="card-text">possui Sementes para plantar</p>
+                        <span class="price">R$ 4,99</span>
+                        <a href="#" class="btn btn-primary comprar-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+           \
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 EcoStore. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        document.querySelectorAll('.comprar-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var card = this.closest('.card');
+                var nomeProduto = card.querySelector('.card-title').innerText;
+                var precoProduto = card.querySelector('.price').innerText;
+
+                // Armazenar os dados do produto no localStorage
+                var produto = {
+                    nome: nomeProduto,
+                    preco: precoProduto
+                };
+
+                // Verificar se já há itens no carrinho
+                var carrinho = localStorage.getItem('carrinho') ? JSON.parse(localStorage.getItem('carrinho')) : [];
+
+                // Adicionar o novo produto ao carrinho
+                carrinho.push(produto);
+
+                // Atualizar o localStorage com os novos dados do carrinho
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            });
+        });
+    </script>
+
+</body>
+
+</html>

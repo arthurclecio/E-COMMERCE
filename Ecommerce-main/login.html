@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EcoStore - Produtos Sustentáveis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+/* Navbar */
+nav.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #28a745;
+}   
+
+.navbar-toggler-icon {
+    background-color: #28a745;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #28a745;
+}
+
+/* Conteúdo de Cadastro/Login */
+section.container {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2.text-center {
+    color: #28a745;
+}
+
+form {
+    max-width: 100%;
+}
+
+.form-group label {
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Rodapé */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilos específicos para a página de Cadastro/Login */
+#cadastro-login-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#cadastro-login-form button {
+    width: 100%;
+}
+
+#cadastro-login-form textarea {
+    resize: vertical;
+}
+
+#cadastro-login-form .btn-primary {
+    margin-top: 15px;
+}
+
+/* Estilizando mensagens de alerta (pode ser personalizado conforme necessário) */
+.alert {
+    margin-top: 20px;
+}
+#cadastro-login-message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+</style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">EcoStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html">Carrinho</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Cadastro e Login</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Mensagem sobre Cadastro/Login -->
+                <div id="cadastro-login-message">
+                    <p>
+                        Se você já possui um login, entre abaixo. Caso contrário, faça seu cadastro.
+                    </p>
+                </div>
+
+                <!-- Formulário de Cadastro/Login -->
+                <form id="cadastro-login-form">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" id="senha" name="senha" required>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="cadastrarOuLogar()">Cadastrar/Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 EcoStore. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts do Bootstrap e jQuery (coloque antes do fechamento da tag body) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Script de exemplo para tratamento de cadastro/login -->
+    <script>
+        function cadastrarOuLogar() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+            // Aqui você pode adicionar lógica para verificar o cadastro ou fazer login.
+            // Este é apenas um exemplo simplificado.
+            if (nome && email && senha) {
+                alert('Usuário cadastrado ou logado com sucesso!');
+                // Redirecionar para a página de início
+                window.location.href = 'index.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+    </script>
+</body>
+
+</html>

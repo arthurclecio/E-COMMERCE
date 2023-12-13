@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EcoStore - Produtos Sustentáveis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- Font Awesome -->
+
+    <style>
+        body {
+            padding-top: 56px;
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: rgb(0, 0, 0);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #28a745;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        /* Banner */
+        header {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        /* Sobre a EcoStore */
+        section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Produtos em Destaque */
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            color: #28a745;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">EcoStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">login</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html">Carrinho</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <header class="bg-dark text-white text-center py-5">
+        <h1 class="display-4">Bem-vindo à EcoStore</h1>
+        <p class="lead">Descubra produtos ecológicos e sustentáveis para um mundo melhor.</p>
+    </header>
+
+    <!-- Sobre a EcoStore -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Sobre Nós</h2>
+        <p>A EcoStore é uma loja comprometida em fornecer produtos sustentáveis e ecológicos. Nosso objetivo é promover um estilo de vida consciente, oferecendo uma variedade de produtos que são gentis com o meio ambiente e, ao mesmo tempo, proporcionam uma experiência excepcional aos nossos clientes.</p>
+        <p>Na EcoStore, acreditamos que pequenas ações podem ter um grande impacto. Nossos produtos são cuidadosamente selecionados, priorizando materiais orgânicos, reciclados e processos de fabricação sustentáveis.</p>
+        <p>Explore nossa coleção de produtos em destaque e faça parte da mudança para um futuro mais verde!</p>
+    </section>
+
+    <!-- Produtos em Destaque -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Promoções da semana</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="anvisa-produto-limpeza-proibicao-bdf83b90.jpg" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Produtos de Limpeza</h5>
+                        <p class="card-text">Produtos sem produtos químicos agressivos</p>
+                        <p class="card-text">Preço: R$ 19,99</p>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="bloco_ecolgico_kraf22.jpg" class="card-img-top" alt="Produto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Caderno Reciclavel</h5>
+                        <p class="card-text">Caderno totalmente Reciclavel</p>
+                        <p class="card-text">Preço: R$ 14,99</p>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="th.jpg" class="card-img-top" alt="Produto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco Bag</h5>
+                        <p class="card-text">Sacola Biodegradavel</p>
+                        <p class="card-text">Preço: R$ 9,99</p>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Adicione mais produtos conforme necessário -->
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 EcoStore. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts do Bootstrap e jQuery (coloque antes do fechamento da tag body) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
